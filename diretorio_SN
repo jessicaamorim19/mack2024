@@ -1,1 +1,16 @@
-cd nginx-custom-html
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+</head>
+<body>
+
+<h1> Jessica Campos Fanti Amorim</h1>
+<p>33 anos / SP-Brasil 
+Cursando Análise e Desenvolvimento de Sistemas - Universidade Mackenzie
+10234513 </p>
+
+<img src="JARI.jpg" alt="Jessica C. F. Amorim">
+
+</body>
+</html>
