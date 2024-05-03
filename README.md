@@ -1,5 +1,6 @@
-Este projeto trata da criação de um módulo de controle de temperatura desenvolvido com IOT atrelado aos componentes:
-- Arduino Uno
-- Servidor MQTT
-- Sensores
-- Código Python 
+Este projeto está referenciado à um Módulo de Controle de Temperatura:
+- Desenvolvido com IOT;
+- Arduino Uno;
+- Servidor MQTT;
+- Sensores;
+- Código de execuções em Python;
