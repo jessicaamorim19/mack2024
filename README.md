@@ -4,14 +4,15 @@
 
 <h3 align="left"> Objetivo </h3>
 Este artigo foi desenvolvido durante o curso da disciplina de ‘Objetos Inteligentes Conectados’, da graduação de “Análise e Desenvolvimento de Sistemas”, conectando o potencial transformador da IoT e Sociedade 5.0 através de soluções cotidianas simples e criativos, melhorando a qualidade de vida e promovendo desenvolvimento sustentável.
-<br><br>
+<br>
 
 <h3 align="left"> Componentes </h3>
-Este projeto envolveu a construção de um protótipo de IoT conectando:
   <ol>
   <li>Plataforma Arduino com programação em C++</li>
   <li>Comunicação com a internet</li>
   <li>Protocolo MQTT</li>
+  <li>Broker Mosquitto</li>
+  <li>Biblioteca Firmata</li>
   <li>Sensor DHT11</li>
   <li>Módulo ESP8266</li>
   <li>Atuador relé 1 canal</li>
