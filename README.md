@@ -50,3 +50,11 @@ Basicamente foi construído um Módulo de Controle de Temperatura Ambiente, cone
 <h3 align="left"> Aplicação </h3>
 
 A documentação completa do projeto encontra-se neste repositório, contando ainda como uma execução disponível no link abaixo:
+<ol>
+  -Link do vídeo de execução: 
+</ol>
+
+<h3 align="left"> Conclusão </h3>
+O desenvolvimento de um controlador de temperatura residencial inteligente demonstra a viabilidade da IoT na construção da Sociedade 5.0. O sistema apresentado permite o monitoramento remoto da temperatura, o controle automatizado do ar-condicionado ou aquecedor e a integração com plataformas de monitoramento online. Dessa forma é possível expandir as funcionalidades do sistema para integrar outros dispositivos inteligentes, como assistentes virtuais, sensores de presença e sistemas de iluminação, prever padrões de uso e otimizar ainda mais o controle da temperatura. Outros modelos podem considerar fontes de energia renováveis e práticas sustentáveis.
+ 
+
