@@ -1,5 +1,7 @@
 <h1 align="center"> Projeto Protótipo de IoT: Controle de Temperatura Ambiente </h1>
 
+<img align="center" src="https://github.com/jessicaamorim19/mack2024/assets/85135086/9ba7597f-bb46-4537-9cc4-d2b707d62c41">
+
 Este projeto está referenciado à um Módulo de Controle de Temperatura:
 - Desenvolvido com IOT;
 - Arduino Uno;
