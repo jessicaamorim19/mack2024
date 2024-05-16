@@ -4,6 +4,7 @@
 
 <h3 align="left"> Objetivo </h3>
 Este artigo foi desenvolvido durante o curso da disciplina de ‘Objetos Inteligentes Conectados’, da graduação de “Análise e Desenvolvimento de Sistemas”, conectando o potencial transformador da IoT e Sociedade 5.0 através de soluções cotidianas simples e criativos, melhorando a qualidade de vida e promovendo desenvolvimento sustentável.
+Basicamente foi construído um Módulo de Controle de Temperatura Ambiente, conectado pela internet à um programa desenvolvido via Arduino em C++ e uma interface desenvolvida em Python. 
 <br>
 
 <h3 align="left"> Componentes </h3>
@@ -13,11 +14,12 @@ Este artigo foi desenvolvido durante o curso da disciplina de ‘Objetos Intelig
   <li>Protocolo MQTT</li>
   <li>Broker Mosquitto</li>
   <li>Biblioteca Firmata</li>
-  <li>Sensor DHT11</li>
-  <li>Módulo ESP8266</li>
-  <li>Atuador relé 1 canal</li>
-  <li>Interface de resultados com programação Python</li>
-  </ol>
+  <li>Interface de relatórios com programação Python</li>
+  <li>Comunicação com a internet (TCP/IP)</li>
+  <li>Sensor DHT11 (adquirido pela plataforma de compra e venda Mercado Livre)</li>
+  <li>2 Módulos ESP8266 (adquiridos pela plataforma de compra e venda Mercado Livre)</li>
+  <li>Atuador relé 1 canal (adquirido pela plataforma de compra e venda Mercado Livre)</li>
+    </ol>
 
 <h3 align="left"> Montagem </h3>
 <ol>
@@ -25,6 +27,8 @@ Este artigo foi desenvolvido durante o curso da disciplina de ‘Objetos Intelig
 <li>Programação em linguagem C++ dos comandos necessários para efetuar a leitura da temperatura pelo sensor DHT 11 na IDE do Arduino</li>
 <li>Programação em linguagem C++ dos comandos necessários para atuar sobre o componente de Relê para acionamento dado a medida de temperatura que será recebida via internet</li>
 <li>Programação em C++ para conexão das duas placas ESP8266 NodeMCU em uma rede de internet Wifi para conexão com a internet</li>
+<li>Programação em C++ em cada uma das placas para comunicação via internet utilizando o protocolo MQTT. A placa do sensor de temperatura foi programada para publicar eventos no tópico do broker MQTT, enquanto a placa do relê foi programada para se inscrever e receber os eventos que chegam no tópico em questão do broker;</li>
+<li>Programação em Python de um subscriber para poder gerar o relatório de envio e recebimento de mensagens para contabilizar os tempos entre envio da mensagem e recebimento da mesma pelos dispositivos inscritos no tópico.</li>
 </ol>
 
 
@@ -43,10 +47,6 @@ Este artigo foi desenvolvido durante o curso da disciplina de ‘Objetos Intelig
 <li>O processo se repete continuamente, monitorando a temperatura, publicando mensagens, recebendo comandos e controlando o relé</li>
 </ol>
 
+<h3 align="left"> Aplicação </h3>
 
-
-i)        Uma breve descrição do funcionamento e uso para quem quiser reproduzir.
-ii)       O software desenvolvido e a documentação de código.
-iii)      A descrição do hardware utilizado (plataformas de desenvolvimento, sensores, atuadores, impressão 3D de peças, medidas de peças e caixas etc.)
-iv)      A documentação das interfaces, protocolos e módulos de comunicação.
-v)       O projeto deve possuir comunicação/controle via internet (TCP/IP) e uso do Protocolo MQTT.
+A documentação completa do projeto encontra-se neste repositório, contando ainda como uma execução disponível no link abaixo:
