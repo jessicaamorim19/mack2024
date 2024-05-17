@@ -10,8 +10,8 @@
 
 
 //Parametros de conexão
-const char* ssid = "Fanti-Family #1"; // REDE
-const char* password = "FF190208"; // SENHA
+const char* ssid = "Rede_Wi-Fi"; // REDE
+const char* password = "********"; // SENHA
 
 
 // MQTT Broker
