@@ -13,7 +13,7 @@ Basicamente foi construído um Módulo de Controle de Temperatura Ambiente, cone
   <li>Comunicação com a internet</li>
   <li>Protocolo MQTT</li>
   <li>Broker Mosquitto</li>
-  <li>Biblioteca Firmata</li>
+  <li>Biblioteca PubSubClient</li>
   <li>Interface de relatórios com programação Python</li>
   <li>Comunicação com a internet (TCP/IP)</li>
   <li>Sensor DHT11 (adquirido pela plataforma de compra e venda Mercado Livre)</li>
