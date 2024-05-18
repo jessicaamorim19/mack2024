@@ -54,7 +54,7 @@ Basicamente foi construído um Módulo de Controle de Temperatura Ambiente, cone
 
 A documentação completa do projeto encontra-se neste repositório, contando ainda como uma execução disponível no link abaixo:
 <ol>
-  -Link do vídeo de execução: 
+  - Link do vídeo de execução: https://youtu.be/6acWel4Fs0Y/
 </ol>
 
 <h3 align="left"> Conclusão </h3>
