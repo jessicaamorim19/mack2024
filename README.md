@@ -19,9 +19,9 @@ Basicamente foi construído um Módulo de Controle de Temperatura Ambiente, cone
   <li>Biblioteca PubSubClient</li>
   <li>Interface de relatórios com programação Python</li>
   <li>Comunicação com a internet (TCP/IP)</li>
-  <li>Sensor DHT11 (adquirido pela plataforma de compra e venda Mercado Livre)</li>
-  <li>2 Módulos ESP8266 (adquiridos pela plataforma de compra e venda Mercado Livre)</li>
-  <li>Atuador relé 1 canal (adquirido pela plataforma de compra e venda Mercado Livre)</li>
+  <li>Sensor DHT11 (adquirido pela plataforma Mercado Livre)</li>
+  <li>2 Módulos ESP8266 (adquiridos pela plataforma Mercado Livre)</li>
+  <li>Atuador relé 1 canal (adquirido pela plataforma Mercado Livre)</li>
     </ol>
 
 <h3 align="left"> Montagem </h3>
