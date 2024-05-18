@@ -1,4 +1,5 @@
-<h1 align="center"> Projeto Protótipo de IoT: Controle de Temperatura Ambiente </h1>
+<h1 align="center"> Projeto Protótipo de IoT+Sociddade 5.0: <br>
+  Controle de Temperatura Ambiente </h1>
 
 <img align="center" src="https://github.com/jessicaamorim19/mack2024/assets/85135086/7599013a-b751-446d-b367-3fb1676e7d8f"><br> <br>
 
