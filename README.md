@@ -1,6 +1,8 @@
 <h1 align="center"> Projeto Protótipo de IoT: Controle de Temperatura Ambiente </h1>
 
-<img align="center" src="https://github.com/jessicaamorim19/mack2024/assets/85135086/9ba7597f-bb46-4537-9cc4-d2b707d62c41"> <br> <br>
+<img align="center" src="https://github.com/jessicaamorim19/mack2024/assets/85135086/7599013a-b751-446d-b367-3fb1676e7d8f"><br> <br>
+
+
 
 <h3 align="left"> Objetivo </h3>
 Este artigo foi desenvolvido durante o curso da disciplina de ‘Objetos Inteligentes Conectados’, da graduação de “Análise e Desenvolvimento de Sistemas”, conectando o potencial transformador da IoT e Sociedade 5.0 através de soluções cotidianas simples e criativos, melhorando a qualidade de vida e promovendo desenvolvimento sustentável.
