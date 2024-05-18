@@ -1,0 +1,212 @@
+1. Materiais
+Para o desenvolvimento deste protótipo, foram consultados diversos outros projetos e bases como a Arduino e Cia, citada neste artigo, onde houve o primeiro contato com as peças, ferramentas e esquemas. 
+Combinando materiais e métodos, alguns obrigatórios e citados para esta demanda, na construção do controlador de temperatura ambiente foram utilizados sensor DHT11, módulo relé 1 canal, módulo Wi-Fi ESP8266 e comunicação MQTT, com objetivo de criar um sistema completo e funcional integrado monitorado.
+
+a. Sensor de temperatura DHT11
+DHT11 é um sensor digital de umidade e temperatura, peça (23 x 12 x 5mm) que permite medir temperaturas de 0 a 50 graus Celsius com precisão de + -2 C, e medir umidade de 20% a 90% com precisão de + -5%.
+o Faixa de Temperatura: 0 - 50ºC
+o Faixa de Umidade: 20~95% RH
+o Precisão Umidade: +/-5%RH
+o Precisão Temperatura: +/- 2ºC
+o Número de pinos: 4
+o Resolução: 1%RH (8bit) / 1ºC (8bit)
+o Tempo de resposta: 6s~30s (Temperatura)
+o Tempo de resposta: 6s~15s (Umidade)
+
+b. Módulo Relé 1 canal
+O Módulo Relé 1 canal, uma pequena placa (17 x 43 x 20mm) que permite a integração com uma ampla gama de microcontroladores como Arduino, AVR, PIC, ARM. A partir das saídas digitais pode-se, através do relé, controlar cargas maiores e dispositivos como motores AC ou DC, eletroímãs, solenoides e lâmpadas incandescentes. Este módulo tem um canal sendo assim concebido para ser integrado para controlar até 1 relé. O módulo é equipado com um relé de alta qualidade, com carga nominal 10A/250VAC, 10A/125VAC, 10A/30VDC. Cada canal possui um LED para indicar o estado da saída do relé.
+o Tensão de operação: 5V DC (VCC e GND)
+o Tensão de sinal: TTL - 5V DC (IN)
+o Corrente típica de operação: 80 ma
+o Contato: NA e NF
+o Capacidade: 30 V DC e 10A ou 250V AC e 10A
+o Tempo de resposta: 5~10ms
+
+c. Módulo Wi-Fi ESP8266
+O ESP8266 é um chip compacto ( 49 x 26 x 4mm) desenhado para atender as necessidades de conectividade sem fio (padrão 802.11 B/G/N), podendo tanto ser utilizado independentemente ou em conjunto com um microcontrolador externo (Arduino, PIC, ARM, etc.).
+o Característica: Padrão 802.11 b/g/n
+o Conexão: Wi-Fi Direct (P2P), soft-AP
+o Contém: Stack TCP/IP integrada
+o Modos: Estação / Access Point
+o Segurança: WPA, WPA2
+o Modelo: ESP-01
+o Tensão (alimentação / IO): 3.3V
+
+d.Cabos Jumper
+São usados para conectar todas as placas, acionadores e atuadores necessários à montagem do módulo.
+o 10 cm de extensão;
+o Cores diversas para identificar as conexões;
+
+2 Especificações das ferramentas
+
+2.1 Plataforma Arduino
+De acordo com o que o site da plataforma define, “Arduino é uma plataforma eletrônica de código aberto baseada em hardware e software fáceis de usar. As placas Arduino são capazes de ler entradas – luz em um sensor, um dedo em um botão ou uma mensagem do Twitter – e transformá-las em uma saída – ativando um motor, ligando um LED, publicando algo online. Você pode dizer à sua placa o que fazer enviando um conjunto de instruções ao microcontrolador da placa. Para isso utiliza-se a linguagem de programação Arduino (baseada em Wiring), e o Software Arduino (IDE) , baseado em Processing”. 
+
+2.2 Biblioteca PubSubClient
+Conforme a plataforma Arduino descreve, “Uma biblioteca cliente para mensagens MQTT. MQTT é um protocolo de mensagens leve, ideal para dispositivos pequenos. Esta biblioteca permite enviar e receber mensagens MQTT. Ele suporta o protocolo MQTT 3.1.1 mais recente e pode ser configurado para usar o MQTT 3.1 mais antigo, se necessário. Ele suporta todo o hardware compatível com Arduino Ethernet Client, incluindo Intel Galileo/Edison, ESP8266 e TI CC3000.”.
+
+2.3 Servidor MQTT
+Conforme Bertoleti (2016), o MQTT (Message Queue Telemetry Transport) consiste em um protocolo de mensagens leve, criado para comunicação M2M (Machine to Machine). Por exigir muito pouco “poder de fogo” em termos de processamento e banda / consumo de Internet, este é um dos protocolos ideais para dispositivos embarcados. Por esta razão, o MQTT é famoso no conceito IoT (Internet of Things).
+Uma comunicação MQTT é composta das seguintes partes: há publishers (quem irá disponibilizar informações), subscribers (quem irá receber as informações) e Broker (servidor MQTT, na nuvem / acessível de qualquer lugar do planeta que contenha conexão com a Internet). Teoricamente, não há limite especificado de subscribers e publishers em uma mesma comunicação MQTT, pois o limite nesse aspecto  é do servidor em lidar com as conexões.
+
+2.3.1 Mosquitto Eclipse
+O Mosquitto, conforme a plataforma Test Mosquitto descreve, “Eclipse Mosquitto é um corretor de mensagens de código aberto (licenciado EPL/EDL) que implementa as versões 5.0, 3.1.1 e 3.1 do protocolo MQTT. O Mosquitto é leve e adequado para uso em todos os dispositivos, desde computadores de placa única de baixo consumo até servidores completos. O protocolo MQTT fornece um método leve de execução de mensagens usando um modelo de publicação/assinatura. Isso o torna adequado para mensagens da Internet das Coisas, como sensores de baixa potência ou dispositivos móveis, como telefones, computadores incorporados ou microcontroladores”.
+
+2.4 Linguagem de programação
+2.4.1 C++
+O módulo Arduino se destaca por sua simplicidade e acessibilidade, permitindo que pessoas com diferentes níveis de conhecimento técnico possam criar projetos inovadores. 
+A linguagem de programação usada no Arduino é a linguagem C++, que é uma linguagem muito tradicional e conhecida. A escolha da linguagem C++ se baseia em sua combinação única de desempenho, eficiência, flexibilidade, versatilidade, comunidade ampla, curva de aprendizado acessível e compatibilidade com ferramentas existentes. Essa combinação torna o Arduino uma plataforma ideal para o desenvolvimento de projetos inovadores e acessíveis a pessoas com diferentes níveis de conhecimento técnico. Apesar da base em C++, a linguagem Arduino oferece algumas abstrações e simplificações que tornam a programação mais fácil e intuitiva para iniciantes. Isso, combinado com a grande quantidade de recursos e bibliotecas disponíveis, torna o Arduino uma plataforma poderosa e versátil para a criação de projetos de Internet das Coisas (IoT), robótica, automação e muito mais.
+
+2.4.2 Python
+Foi desenvolvido um código em linguagem Python para monitoramento e apresentação de dados em tela sobre a temperatura ambiente geradas pelo protótipo.
+O Python é uma das linguagens de programação mais populares do mundo devido a sua simplicidade, legibilidade, versatilidade, possuir grande comunidade e abundância de recursos, fácil portabilidade e grade eficiência e desempenho.
+Em função de todos os benefícios dessa linguagem de programação, foi escolhido para complementar o código do projeto.
+
+2.5 Métodos
+Em posse dos materiais e ferramentas necessárias para a montagem do projeto, seguiremos com a prototipagem do Controlador de Temperatura Ambiente, envolvendo:
+a) Conexão de todos os componentes físicos do módulo eletrônico;
+b) Programação em linguagem C++ dos comandos necessários para efetuar a leitura da temperatura pelo sensor DHT 11 na IDE;
+c) Programação em linguagem C++ dos comandos necessários para atuar sobre o componente de Relê para acionamento dado a medida de temperatura que será recebida via internet;
+d) Programação em C++ para conexão das duas placas ESP8266 NodeMCU em uma rede de internet Wifi para conexão com a internet;
+e) Programação em C++ em cada uma das placas para comunicação via internet utilizando o protocolo MQTT. A placa do sensor de temperatura foi programada para publicar eventos no tópico do broker MQTT, enquanto a placa do relê foi programada para se inscrever e receber os eventos que chegam no tópico em questão do broker;
+f) Programação em Python de um subscriber para poder gerar o relatório de envio e recebimento de mensagens para contabilizar os tempos entre envio da mensagem e recebimento da mesma pelos dispositivos inscritos no tópico.
+
+2.5.1 Montagem do módulo eletrônico
+Placa 1: ESP8266 NodeMCU + Sensor DHT11:
+1. Conectar o pino VCC do DHT11 no pino 3V3 da ESP8266;
+2. Conectar o pino de Leitura do DHT11 no pino D2 da ESP8266;
+3. Conectar o pino GND do DHT11 no pino GND da ESP8266.
+
+Placa 2: ESP8266 NodeMCU + Relê de tensão:
+1. Conectar o pino IN do relê no pino D2 da ESP8266;
+2. Conectar o pino VCC do relê no pino 3V3 da ESP8266;
+3. Conectar o pino GND do relê no pino GND da ESP8266.
+
+2.5.2 Programação
+Placa 1: ESP8266 NodeMCU + Sensor DHT11
+
+i.Instalação de bibliotecas:
+o  ESP8266WiFi.h: Biblioteca para comunicação Wi-Fi com o módulo ESP8266.
+o PubSubClient.h: Biblioteca para comunicação com o protocolo MQTT.
+o DHT.h: Biblioteca para comunicação com o sensor DHT11.
+o NTPClient.h: Biblioteca para sincronizar a hora com um servidor NTP.
+o WiFiUdp.h: Biblioteca para comunicação UDP (utilizada pelo NTPClient).
+
+ii. Definição de constantes:
+o DHTPIN: Pino GPIO conectado ao sensor DHT11.
+o DHTTYPE: Tipo de sensor DHT (DHT11 neste caso).
+o ssid: Nome da rede Wi-Fi.
+o password: Senha da rede Wi-Fi.
+o mqtt_broker: Endereço do broker MQTT.
+o topic: Tópico MQTT para publicar e receber dados.
+o mqtt_username: Usuário MQTT (não utilizado neste código).
+o mqtt_password: Senha MQTT (não utilizada neste código).
+o mqtt_port: Porta do broker MQTT.
+
+iii. Variáveis:
+o mqttStatus: Indica se o cliente MQTT está conectado.
+
+iv. Objetos:
+o dht: Objeto da biblioteca DHT para comunicação com o sensor.
+o ntpUDP: Objeto UDP para comunicação NTP.
+o timeClient: Objeto NTPClient para sincronizar a hora.
+o espClient: Objeto WiFiClient para comunicação com o broker MQTT.
+o client: Objeto PubSubClient para comunicação MQTT.
+
+v. Protótipos de funções:
+o connectMQTT: Função para conectar ao broker MQTT.
+o callback: Função de callback para receber mensagens MQTT.
+
+vi.  Função setup:
+o Inicializa a comunicação serial.
+o Conecta à rede Wi-Fi.
+o Inicializa o sensor DHT11.
+o Tenta conectar ao broker MQTT e atualiza a variável mqttStatus.
+o Inicializa o NTPClient e define o deslocamento de tempo.
+
+vii. Loop principal (loop):
+o Atualiza a hora com o NTPClient.
+o Lê a temperatura do sensor DHT11 e converte em string.
+o Cria uma string JSON com os dados de temperatura e hora atual.
+o Publica a string JSON no tópico MQTT a cada 2 segundos.
+o Verifica se o cliente MQTT está conectado e chama client.loop() para processar mensagens.
+o Se a conexão MQTT estiver ativa e um segundo tiver passado desde a última publicação, publica a string JSON no tópico MQTT.
+
+viii. Função connectMQTT:
+o Tenta conectar ao broker MQTT várias vezes (até 5 tentativas).
+o Se a conexão for bem-sucedida, imprime uma mensagem de sucesso e define mqttStatus como 1.
+o Se a conexão falhar, imprime uma mensagem de erro e define mqttStatus como 0.
+o Retorna mqttStatus ao final da função.
+
+ix.  Função callback:
+o Imprime o tópico da mensagem recebida.
+o Imprime a mensagem recebida.
+o Imprime uma linha de separação.
+
+Placa 2: ESP8266 NodeMCU + Relê de tensão
+
+i. Instalação das Bibliotecas:
+o ESP8266WiFi.h: Comunicação Wi-Fi.
+o PubSubClient.h: Comunicação MQTT.
+
+ii. Constantes:
+o Parâmetros de conexão Wi-Fi (SSID, senha).
+o Parâmetros de conexão MQTT (broker, tópico, porta).
+o Credenciais MQTT (não utilizadas neste código).
+
+iii. Variáveis:
+o mqttStatus: Indica se o cliente MQTT está conectado.
+
+iv. Objetos:
+o espClient: Objeto WiFiClient para comunicação com o broker.
+o client: Objeto PubSubClient para comunicação MQTT.
+
+v. Protótipos:
+o connectMQTT: Função para conectar ao broker MQTT.
+o callback: Função de callback para receber mensagens MQTT.
+
+vi. Função setup:
+o Inicializa a comunicação serial.
+o Define o pino 4 como saída para controlar o relé.
+o Conecta à rede Wi-Fi.
+o Tenta conectar ao broker MQTT e atualiza mqttStatus.
+
+vii. Loop principal (loop):
+o Aguarda 500ms (pode ser ajustado).
+o Verifica se o cliente MQTT está conectado e chama client.loop() para processar mensagens.
+
+viii. Função connectMQTT:
+o Tenta conectar ao broker MQTT várias vezes (até 5 tentativas).
+o Se a conexão for bem-sucedida, imprime uma mensagem e define mqttStatus como 1.
+o Se a conexão falhar, imprime uma mensagem de erro e define mqttStatus como 0.
+o Retorna mqttStatus.
+
+a. Função callback:
+o Imprime o tópico da mensagem recebida.
+o Extrai os últimos 7 caracteres da mensagem (assumindo um valor numérico).
+o Converte a string extraída para float.
+o Se o valor for maior que 25.4, aciona o relé (digitalWrite(4, LOW)).
+o Caso contrário, desliga o relé (digitalWrite(4, HIGH)).
+o Nesse caso o valor digital 4 equivale ao pino D2 da placa ESP8266;
+
+
+2.5.3 Configuração do Broker MQTT
+Para configurar o broker e o tópico para envio e recebimento de mensagens basta declarar as variáveis abaixo no código das placas e utilizá-las nas funções de interação com o tópico:
+ // MQTT Broker
+o const char *mqtt_broker = "test.mosquitto.org";  //Host do broket
+o const char *topic = "JESSICA/teste";            //Topico a ser subscrito e publicado
+o const char *mqtt_username = "";         //Usuario
+o const char *mqtt_password = "";         //Senha
+o const int mqtt_port = 1883;            
+
+3. Aplicação do Módulo
+Após todas as etapas anteriores terem sido cumpridas, englobando as configurações das ferramentas e montagem dos circuitos, neste momento será realizada a execução de todos os componentes integrados, permitindo que seja feita a consulta de temperatura do ambiente e seu controle.
+i. O Sensor DHT11 lê a temperatura do ambiente;
+ii. Os valores lidos são armazenados em variáveis; 
+iii. Os códigos embarcados estabelecem uma conexão com o servidor MQTT utilizando a biblioteca PubSubClient; 
+iv. A conexão é feita através da rede Wi-Fi utilizando as placas ESP8266; 
+v. A primeira placa ESP8266 publica mensagens no tópico MQTT; 
+vi. A segunda placa ESP8266 recebe mensagens do tópico MQTT; 
+vii. Com base nos comandos recebidos do servidor, a ESP8266 aciona ou desliga o relé conforme a temperatura de referência; 
+viii. O relé controla o acionamento de um dispositivo de aquecimento ou refrigeração; 
+ix. O processo se repete continuamente, monitorando a temperatura, publicando mensagens, recebendo comandos e controlando o relé.
